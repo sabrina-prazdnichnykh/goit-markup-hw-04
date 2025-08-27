@@ -44,6 +44,9 @@ img {
 
 .header-section {
     border-bottom: 1px solid #e7e9fc;
+    box-shadow:  2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16),
+    0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .logo-header  {
@@ -84,12 +87,20 @@ img {
     letter-spacing: 0.02em;
     padding: 24px 0 24px;
     display: block;
-    transition-property: color;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-delay: 0s;
+    position: relative;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.header-nav-link:hover::after {
+    content: "";
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    height: 4px;
+    background-color: #404bbf;
+    border-radius: 2px;
+}
 
 .header-nav-link:hover, .header-nav-link:focus {
     color: #404BBF;
@@ -126,7 +137,13 @@ img {
 
 .hero-section {
     background-color: #2E2F42;
-    padding: 188px 0 188px
+    padding: 188px 0 188px;
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office.jpg);
+    max-width: 1440px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
 }
 
 .hero-section-title {
@@ -140,6 +157,7 @@ img {
     margin-bottom: 48px;
     margin: 0 auto;
     margin-bottom: 48px;
+    
 }
 
 .hero-section-button {
@@ -158,8 +176,7 @@ img {
     display: block;
     margin: 0 auto;
     cursor: pointer;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-button:hover, .hero-button:focus {
@@ -302,6 +319,7 @@ img {
 .team-member-social-element {
     width: 40px;
     height: 40px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-member-social-link {
     width: 100%;
@@ -311,8 +329,6 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -350,14 +366,7 @@ img {
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.portfolio-list-item:hover {
-    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-}
 
-.portfolio-list-item:hover .overflow-portfolio {
-    transform: translateY(0%);
-}
 .portfolio-list-elements {
     padding: 32px 16px;
     border: 1px solid #e7e9fc;
@@ -434,6 +443,10 @@ img {
     max-width: 264px;
 }
 
+.footer-logotext {
+    margin-right: 120px;
+}
+
 .footer-text-social{
     font-weight: 500;
     font-size: 16px;
@@ -463,5 +476,14 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.footer-social-link:hover, .footer-social-link:focus {
+    background-color: #31d0aa;
+}
+
+.footer .container {
+    display: flex;
+    align-items: baseline;
+}
