@@ -88,10 +88,11 @@ img {
     padding: 24px 0 24px;
     display: block;
     position: relative;
+    color: #404bbf;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.header-nav-link:hover::after {
+.header-nav-link::after {
     content: "";
     width: 100%;
     position: absolute;
@@ -319,8 +320,8 @@ img {
 .team-member-social-element {
     width: 40px;
     height: 40px;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .team-member-social-link {
     width: 100%;
     height: 100%;
@@ -329,7 +330,9 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 
 
 .social-icon {
@@ -366,11 +369,25 @@ img {
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.portfolio-list-item:hover {
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+        0px 1px 1px rgba(46, 47, 66, 0.16),
+        0px 2px 1px rgba(46, 47, 66, 0.08);
+}
 
+.portfolio-list-item:hover .overflow-portfolio {
+    transform: translateY(0%);
+}
 .portfolio-list-elements {
     padding: 32px 16px;
     border: 1px solid #e7e9fc;
     border-top: none;
+}
+
+.portfolio-list-img {
+    position: relative;
+    overflow: hidden;
+
 }
 
 .portfolio-list-header {
@@ -390,15 +407,9 @@ img {
 
 }
 
-.portfolio-list-img {
-    position: relative;
-    overflow: hidden;
-}
-
 .overflow-portfolio {
     position: absolute;
     top: 0;
-    left: 0;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
